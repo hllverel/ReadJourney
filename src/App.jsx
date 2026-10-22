@@ -1,6 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
+import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
 
 function App() {
   return (
