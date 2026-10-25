@@ -3,7 +3,7 @@
   --white: #f9f9f9;
   --lightgrey: #686868;
   --lightergrey: rgba(227, 227, 227, 0.3);
-  --textarea: #262626;
+  --input: #262626;
   --componentbg: #1f1f1f;
   --sitebg: #141414;
   --red: #e90516;
@@ -24,7 +24,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 h1 {
   font-weight: 700;
@@ -65,6 +64,10 @@ li {
 }
 
 @media (min-width: 768px) {
+  h1 {
+    font-size: 64px;
+    line-height: 0.9375;
+  }
 }
 
 @media (min-width: 1280px) {

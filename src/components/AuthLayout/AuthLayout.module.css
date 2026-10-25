@@ -1,0 +1,116 @@
+.layout {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.formCard {
+  padding: 20px;
+  border-radius: 30px;
+  background: var(--componentbg);
+}
+
+.logoArea {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 42px;
+  height: 17px;
+}
+
+.logoTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  display: none;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.titleAccent {
+  color: var(--lightergrey);
+}
+
+.heroCard {
+  padding: 20px 20px 0 20px;
+  border-radius: 30px;
+  background: var(--componentbg);
+  overflow: hidden;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 250 / 330;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    padding: 32px;
+  }
+
+  .formCard {
+    padding: 40px 168px 40px 64px;
+    height: auto;
+    flex-grow: 1;
+  }
+
+  .logoArea {
+    margin-bottom: 157px;
+  }
+
+  .logoTitle {
+    display: block;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .heroCard {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .layout {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .formCard {
+    flex-basis: 50%;
+    flex-grow: 1;
+    padding: 40px 64px;
+  }
+
+  .logoArea {
+    margin-bottom: 107px;
+  }
+
+  .heroCard {
+    display: block;
+    flex-basis: 50%;
+    flex-grow: 1;
+    padding: 80px 80px 0 80px;
+  }
+
+  .heroImage {
+    aspect-ratio: 222 / 330;
+  }
+}

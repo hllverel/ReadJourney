@@ -1,0 +1,112 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 12px;
+  padding: 14px;
+  width: 100%;
+  height: 44px;
+  background: var(--input);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: #686868;
+}
+
+.field:hover,
+.field:active,
+.field:focus {
+  border: 1px solid var(--lightergrey);
+}
+
+.input {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.input:hover,
+.input:active,
+.input:focus {
+  outline: none;
+  border: none;
+}
+
+.actions {
+  margin: 12px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.submitButton {
+  border-radius: 30px;
+  width: 140px;
+  height: 42px;
+  text-align: center;
+  background: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: 0.02em;
+  color: var(--componentbg);
+}
+
+.loginLink {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--lightgrey);
+}
+
+@media (min-width: 768px) {
+  .form {
+    gap: 14px;
+  }
+
+  .field {
+    font-size: 14px;
+    height: 50px;
+    line-height: 1.28571;
+  }
+
+  .actions {
+    margin-top: 68px;
+    margin-bottom: 0;
+    gap: 20px;
+  }
+
+  .submitButton {
+    width: 166px;
+    height: 52px;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .loginLink {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+}
+
+@media (min-width: 1280px) {
+}
