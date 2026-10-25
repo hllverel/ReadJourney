@@ -19,6 +19,7 @@
 
 body {
   font-family: var(--font-family);
+  color: var(--white);
   background-color: var(--sitebg);
   margin: 0;
   -webkit-font-smoothing: antialiased;
