@@ -6,12 +6,12 @@ export const loginSchema = yup.object({
   email: yup
     .string()
     .matches(emailPattern, {
-      message: "Enter a valid email",
+      message: "Enter a valid Email",
       excludeEmptyString: true,
     })
     .required("Email is required"),
   password: yup
     .string()
-    .min(7, "Password must be at least 7 characters")
+    .min(7, "Enter a valid Password*")
     .required("Password is required"),
 });

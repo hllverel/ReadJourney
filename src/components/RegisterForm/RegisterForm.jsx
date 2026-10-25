@@ -1,3 +1,4 @@
+import { useState, useId } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
@@ -9,6 +10,10 @@ import styles from "./RegisterForm.module.css";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const passwordId = useId();
+  
   const {
     register,
     handleSubmit,
@@ -37,10 +42,28 @@ const RegisterForm = () => {
       </label>
       {errors.email && <p className={styles.error}>{errors.email.message}</p>}
 
-      <label className={styles.field}>
-        <span className={styles.label}>Password:</span>
-        <input className={styles.input} type="password" autoComplete="new-password" {...register("password")} />
-      </label>
+      <div className={styles.field}>
+        <label className={styles.label} htmlFor={passwordId}>
+          Password:
+        </label>
+        <input
+          id={passwordId}
+          className={styles.input}
+          type={showPassword ? "text" : "password"}
+          autoComplete="new-password"
+          {...register("password")}
+        />
+        <button
+          className={styles.toggleButton}
+          type="button"
+          onClick={() => setShowPassword((prev) => !prev)}
+          aria-label={showPassword ? "Hide password" : "Show password"}
+        >
+          <svg className={styles.toggleIcon} aria-hidden="true">
+            <use href={`/symbol-defs.svg#${showPassword ? "hidepassword" : "showpassword"}`} />
+          </svg>
+        </button>
+      </div>
       {errors.password && <p className={styles.error}>{errors.password.message}</p>}
 
       <div className={styles.actions}>

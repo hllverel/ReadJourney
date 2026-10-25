@@ -46,6 +46,18 @@
   border: none;
 }
 
+.toggleIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.error {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--red);
+}
+
 .actions {
   margin: 12px 0 20px 0;
   display: flex;
@@ -87,6 +99,16 @@
     font-size: 14px;
     height: 50px;
     line-height: 1.28571;
+  }
+
+  .toggleIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .error {
+    font-size: 12px;
+    line-height: 1.16667;
   }
 
   .actions {
