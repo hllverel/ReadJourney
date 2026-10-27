@@ -3,11 +3,11 @@ import styles from "./AuthLayout.module.css";
 const AuthLayout = ({ children }) => (
   <main className={styles.layout}>
     <section className={styles.formCard}>
-      <div className={styles.logoArea}>
-        <svg className={styles.logo} aria-hidden="true">
+      <div className={styles.logo}>
+        <svg className={styles.logoSvg} aria-hidden="true">
           <use href="/symbol-defs.svg#logo" />
         </svg>
-        <p className={styles.logoTitle}>Read Journey</p>
+        <span className={styles.logoText}>Read Journey</span>
       </div>
       <h1 className={styles.title}>
         Expand your mind, reading <span className={styles.titleAccent}>a book</span>

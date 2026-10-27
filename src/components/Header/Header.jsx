@@ -27,28 +27,29 @@ const Header = () => {
         <svg className={styles.logoSvg} aria-hidden="true">
           <use href="/symbol-defs.svg#logo" />
         </svg>
-        <span className={styles.logoText}>read journey</span>
+        <span className={styles.logoText}>Read Journey</span>
       </Link>
 
       <div className={styles.userBar}>
-        <div className={styles.avatar} aria-hidden="true">
-          {name?.charAt(0).toUpperCase()}
-        </div>
-        <p className={styles.userName}>{name}</p>
+        <div className={styles.userInfo}>
+          <div className={styles.avatar} aria-hidden="true">
+            {name?.charAt(0).toUpperCase()}
+          </div>
+            <p className={styles.userName}>{name}</p>
+          </div>
+        <button
+            type="button"
+            className={styles.menuToggle}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls={menuId}
+          >
+            <svg className={styles.menuIcon} aria-hidden="true">
+              <use href={`/symbol-defs.svg#${isMenuOpen ? "close" : "menu"}`} />
+            </svg>
+          </button>
       </div>
-
-      <button
-        type="button"
-        className={styles.menuToggle}
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        aria-expanded={isMenuOpen}
-        aria-controls={menuId}
-      >
-        <svg className={styles.menuIcon} aria-hidden="true">
-          <use href={`/symbol-defs.svg#${isMenuOpen ? "close" : "menu"}`} />
-        </svg>
-      </button>
 
       <div
         id={menuId}

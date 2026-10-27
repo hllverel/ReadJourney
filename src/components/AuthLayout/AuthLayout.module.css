@@ -14,18 +14,17 @@
   background: var(--componentbg);
 }
 
-.logoArea {
+.logo {
   display: flex;
   gap: 4px;
   margin-bottom: 40px;
 }
 
-.logo {
+.logoSvg {
   width: 42px;
-  height: 17px;
 }
 
-.logoTitle {
+.logoText {
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
@@ -70,11 +69,11 @@
     flex-grow: 1;
   }
 
-  .logoArea {
+  .logo {
     margin-bottom: 157px;
   }
 
-  .logoTitle {
+  .logoText {
     display: block;
   }
 
@@ -99,7 +98,7 @@
     padding: 40px 64px;
   }
 
-  .logoArea {
+  .logo {
     margin-bottom: 107px;
   }
 
