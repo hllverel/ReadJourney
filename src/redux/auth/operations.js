@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { api, setAuthHeader } from "../../services/api";
+import { api, setAuthHeader, clearAuthHeader } from "../../services/api";
 
 export const register = createAsyncThunk(
   "auth/register",
@@ -30,3 +30,15 @@ export const logIn = createAsyncThunk(
     }
   }
 );
+
+export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
+  try {
+    await api.post("/users/signout");
+  } catch (error) {
+    return thunkAPI.rejectWithValue(
+      error.response?.data?.message || error.message
+    );
+  } finally {
+    clearAuthHeader();
+  }
+});
