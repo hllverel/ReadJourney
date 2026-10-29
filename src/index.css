@@ -24,6 +24,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
 }
 
 h1 {
@@ -65,6 +66,10 @@ li {
 }
 
 @media (min-width: 768px) {
+  body {
+    padding: 32px;
+  }
+
   h1 {
     font-size: 64px;
     line-height: 0.9375;

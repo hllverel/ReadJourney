@@ -30,13 +30,18 @@ const Header = () => {
         <span className={styles.logoText}>Read Journey</span>
       </Link>
 
+      <div className={styles.navBar}>
+        <Navigation onNavigate={() => setIsMenuOpen(false)} />
+      </div>
+      
       <div className={styles.userBar}>
         <div className={styles.userInfo}>
           <div className={styles.avatar} aria-hidden="true">
             {name?.charAt(0).toUpperCase()}
           </div>
             <p className={styles.userName}>{name}</p>
-          </div>
+        </div>
+        
         <button
             type="button"
             className={styles.menuToggle}
@@ -48,7 +53,11 @@ const Header = () => {
             <svg className={styles.menuIcon} aria-hidden="true">
               <use href={`/symbol-defs.svg#${isMenuOpen ? "close" : "menu"}`} />
             </svg>
-          </button>
+        </button>
+
+        <button type="button" className={styles.logoutButton} onClick={handleLogout}>
+          Log out
+        </button>
       </div>
 
       <div
@@ -57,8 +66,9 @@ const Header = () => {
           isMenuOpen ? `${styles.navWrapper} ${styles.open}` : styles.navWrapper
         }
       >
+        <div></div>
         <Navigation onNavigate={() => setIsMenuOpen(false)} />
-        <button type="button" className={styles.logoutButton} onClick={handleLogout}>
+        <button type="button" className={`${styles.logoutButton} ${styles.mobile}`} onClick={handleLogout}>
           Log out
         </button>
       </div>
