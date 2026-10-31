@@ -1,0 +1,44 @@
+.section {
+  border-radius: 30px;
+  background: var(--componentbg);
+  padding: 40px 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--lightergrey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.arrowButton:disabled .arrowIcon {
+}
+
+.list {
+  display: flex;
+  gap: 21px;
+}

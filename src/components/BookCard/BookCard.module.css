@@ -1,0 +1,32 @@
+.card {
+  width: 137px;
+}
+
+.coverButton {
+  margin-bottom: 8px;
+  transition: 0.15s ease-in-out;
+}
+
+.coverButton:hover,
+.coverButton:focus {
+  transform: scale(1.05);
+}
+
+.cover {
+  border-radius: 8px;
+  width: 137px;
+  height: 208px;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.author {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--lightgrey);
+}
