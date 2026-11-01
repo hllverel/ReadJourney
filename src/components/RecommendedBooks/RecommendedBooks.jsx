@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { getRecommendedBooks } from "../../redux/books/operations.js";
@@ -8,10 +8,13 @@ import {
   selectBooksTotalPages,
   selectBooksIsLoading,
 } from "../../redux/books/selectors.js";
+import { useBooksPerPage } from "../../hooks/useBooksPerPage.js";
 import BookCard from "../BookCard/BookCard.jsx";
 import styles from "./RecommendedBooks.module.css";
 
-const RecommendedBooks = ({ limit }) => {
+const RecommendedBooks = () => {
+     const listRef = useRef(null);
+   const limit = useBooksPerPage(listRef);
   const dispatch = useDispatch();
   const books = useSelector(selectBooks);
   const page = useSelector(selectBooksPage);
@@ -27,9 +30,9 @@ const RecommendedBooks = ({ limit }) => {
     [dispatch, limit]
   );
 
-  useEffect(() => {
-    loadPage(1);
-  }, [loadPage]);
+   useEffect(() => {
+     if (limit) loadPage(1);
+   }, [limit, loadPage]);
 
   return (
     <section className={styles.section}>
@@ -61,7 +64,7 @@ const RecommendedBooks = ({ limit }) => {
         </div>
       </div>
 
-      <ul className={styles.list}>
+      <ul className={styles.list} ref={listRef}>
         {books.map((book) => (
           <BookCard key={book._id} book={book} />
         ))}

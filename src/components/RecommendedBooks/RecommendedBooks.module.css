@@ -41,7 +41,8 @@
 }
 
 .list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(137px, 1fr));
   gap: 21px;
 }
 
@@ -66,7 +67,6 @@
 
   .list {
     gap: 27px 25px;
-    flex-wrap: wrap;
   }
 }
 
