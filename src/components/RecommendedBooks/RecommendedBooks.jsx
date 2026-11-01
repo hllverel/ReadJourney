@@ -9,17 +9,20 @@ import {
   selectBooksIsLoading,
 } from "../../redux/books/selectors.js";
 import { useBooksPerPage } from "../../hooks/useBooksPerPage.js";
+import { useModal } from "../../hooks/useModal.js";
+import Modal from "../Modal/Modal.jsx";
 import BookCard from "../BookCard/BookCard.jsx";
 import styles from "./RecommendedBooks.module.css";
 
 const RecommendedBooks = () => {
-     const listRef = useRef(null);
-   const limit = useBooksPerPage(listRef);
+  const listRef = useRef(null);
+  const limit = useBooksPerPage(listRef);
   const dispatch = useDispatch();
   const books = useSelector(selectBooks);
   const page = useSelector(selectBooksPage);
   const totalPages = useSelector(selectBooksTotalPages);
   const isLoading = useSelector(selectBooksIsLoading);
+  const detailsModal = useModal();
 
   const loadPage = useCallback(
     (nextPage) => {
@@ -66,9 +69,15 @@ const RecommendedBooks = () => {
 
       <ul className={styles.list} ref={listRef}>
         {books.map((book) => (
-          <BookCard key={book._id} book={book} />
+          <BookCard key={book._id} book={book} onOpen={detailsModal.open}/>
         ))}
       </ul>
+
+      {detailsModal.isOpen && (
+        <Modal onClose={detailsModal.close} label="Book details">
+          <p>{detailsModal.payload.title}</p>
+        </Modal>
+      )}
     </section>
   );
 };

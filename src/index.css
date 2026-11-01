@@ -66,6 +66,11 @@ button {
   cursor: pointer;
 }
 
+a:focus-visible,
+button:focus-visible {
+  border: 2px solid var(--lightgrey);
+}
+
 ul,
 li {
   list-style: none;

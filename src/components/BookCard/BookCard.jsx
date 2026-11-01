@@ -1,8 +1,8 @@
 import styles from "./BookCard.module.css";
 
-const BookCard = ({ book }) => (
+const BookCard = ({ book, onOpen }) => (
   <li className={styles.card}>
-    <button type="button" className={styles.coverButton}>
+    <button type="button" className={styles.coverButton} onClick={() => onOpen(book)}>
       <img
         className={styles.cover}
         src={book.imageUrl}
