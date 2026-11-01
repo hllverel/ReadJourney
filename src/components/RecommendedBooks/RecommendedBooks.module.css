@@ -24,7 +24,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid var(--lightergrey);
+  border: 1px solid var(--lightgrey);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,9 +33,11 @@
 .arrowIcon {
   width: 16px;
   height: 16px;
+  stroke: var(--white);
 }
 
 .arrowButton:disabled .arrowIcon {
+  stroke: var(--lightgrey);
 }
 
 .list {
