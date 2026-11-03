@@ -17,7 +17,7 @@ import BookCard from "../BookCard/BookCard.jsx";
 import BookDetails from "../BookDetails/BookDetails.jsx";
 import styles from "./RecommendedBooks.module.css";
 
-const RecommendedBooks = () => {
+const RecommendedBooks = ({filters}) => {
   const listRef = useRef(null);
   const limit = useBooksPerPage(listRef);
   const dispatch = useDispatch();
@@ -31,11 +31,11 @@ const RecommendedBooks = () => {
 
   const loadPage = useCallback(
     (nextPage) => {
-      dispatch(getRecommendedBooks({ page: nextPage, limit }))
+      dispatch(getRecommendedBooks({ page: nextPage, limit, ...filters }))
         .unwrap()
         .catch((message) => toast.error(message));
     },
-    [dispatch, limit]
+    [dispatch, limit, filters]
   );
 
    useEffect(() => {
