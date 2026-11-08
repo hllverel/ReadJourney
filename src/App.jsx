@@ -6,6 +6,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import LibraryPage from "./pages/LibraryPage/LibraryPage.jsx";
+import ReadingPage from "./pages/ReadingPage/ReadingPage.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route element={<PrivateRoute><AppLayout /></PrivateRoute>}>
         <Route path="/recommended" element={<HomePage />} />
         <Route path="/library" element={<LibraryPage />} />
+        <Route path="/reading/:bookId" element={<ReadingPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
