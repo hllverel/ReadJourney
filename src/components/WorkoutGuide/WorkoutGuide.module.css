@@ -1,0 +1,73 @@
+.guide {
+    border-radius: 12px;
+    background: var(--input);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    gap: 12px;
+}
+
+.number {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--input);
+}
+
+.text {
+    color: var(--lightgrey);
+}
+
+.text span {
+    color: var(--white);
+}
+
+.libraryLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--lightgrey);
+}
+
+.arrowIcon {
+    width: 24px;
+    height: 24px;
+}
+
+@media (min-width: 768px) {
+    .guide {
+        gap: 26px;
+    }
+
+    .title {
+        margin-bottom: 14px;
+    }
+
+    .number {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+}

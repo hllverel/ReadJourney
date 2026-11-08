@@ -5,22 +5,22 @@ const WorkoutGuide = () => (
   <section className={styles.guide}>
     <h2 className={styles.title}>Start your workout</h2>
 
-    <ol className={styles.steps}>
+    <ul className={styles.steps}>
       <li className={styles.step}>
-        <span className={styles.number} aria-hidden="true">1</span>
+        <h2 className={styles.number} aria-hidden="true">1</h2>
         <p className={styles.text}>
-          <strong>Create a personal library:</strong> add the books you intend
+          <span>Create a personal library:</span> add the books you intend
           to read to it.
         </p>
       </li>
       <li className={styles.step}>
-        <span className={styles.number} aria-hidden="true">2</span>
+        <h2 className={styles.number} aria-hidden="true">2</h2>
         <p className={styles.text}>
-          <strong>Create your first workout:</strong> define a goal, choose a
+          <span>Create your first workout:</span> define a goal, choose a
           period, start training.
         </p>
       </li>
-    </ol>
+    </ul>
 
     <Link className={styles.libraryLink} to="/library">
       My library
