@@ -1,0 +1,28 @@
+.quote {
+    display: none;
+}
+
+@media (min-width: 1280px) {
+    .quote {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 15px 20px;
+        border-radius: 12px;
+        background: var(--input);
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .text {
+        color: var(--lightgrey);
+        
+    }
+
+    .text span {
+        color: var(--white);
+    }
+}
