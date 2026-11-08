@@ -1,0 +1,29 @@
+.dashboard {
+    border-radius: 30px;
+    background: var(--componentbg);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .dashboard {
+        flex-direction: row;
+        gap: 32px;
+        padding: 32px;
+    }
+
+    .dashboard > * {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 1280px) {
+    .dashboard {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+}
