@@ -71,6 +71,11 @@
 }
 
 @media (min-width: 1280px) {
+  .section {
+    flex: 1;
+    min-width: 0;
+  }
+
   .list {
     gap: 27px 20px;
   }
