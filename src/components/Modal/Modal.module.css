@@ -14,7 +14,10 @@
   overflow-y: auto;
   background: var(--bg);
   border-radius: 12px;
-  margin: 16px;
+  margin: 20px;
+  border: 1px solid rgba(104, 104, 104, 0.2);
+  border-radius: 12px;
+  background: var(--componentbg);
 }
 
 .closeButton {
@@ -37,7 +40,8 @@
 
 @media (min-width: 768px) {
   .modal {
-    margin: 0;
+    margin: 134px;
+    max-width: 500px;
   }
 
   .closeIcon {
