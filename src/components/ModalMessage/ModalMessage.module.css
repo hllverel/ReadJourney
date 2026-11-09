@@ -1,0 +1,38 @@
+.message {
+  padding: 40px 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.text {
+  color: var(--lightgrey);
+}
+
+@media (min-width: 768px) {
+  .message {
+    padding: 50px;
+    max-width: 342px;
+  }
+
+  .icon {
+    font-size: 68px;
+    line-height: 1.02941;
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+}
