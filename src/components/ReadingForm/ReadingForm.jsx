@@ -13,7 +13,9 @@ const ReadingForm = ({ book }) => {
   const dispatch = useDispatch();
   const finishedModal = useModal();
 
-  const activeSession = book.progress.find((entry) => entry.status === "active");
+  const activeSession = book.progress.find(
+    (entry) => entry.status === "active",
+  );
   const isReading = Boolean(activeSession);
   const isDone = book.status === "done";
 
@@ -23,7 +25,7 @@ const ReadingForm = ({ book }) => {
         totalPages: book.totalPages,
         minPage: activeSession?.startPage ?? 1,
       }),
-    [book.totalPages, activeSession?.startPage]
+    [book.totalPages, activeSession?.startPage],
   );
 
   const {
@@ -52,7 +54,11 @@ const ReadingForm = ({ book }) => {
 
   return (
     <>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
         <fieldset className={styles.fieldset} disabled={isDone}>
           <legend className={styles.legend}>
             {isReading ? "Stop page:" : "Start page:"}

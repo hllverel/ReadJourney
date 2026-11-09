@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, Link, useParams } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute.jsx";
@@ -25,14 +25,34 @@ function App() {
 
   if (isChecking) {
     return null;
-    }
-  
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/recommended" replace />} />
-      <Route path="/register" element={<RestrictedRoute><RegisterPage /></RestrictedRoute>} />
-      <Route path="/login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
-      <Route element={<PrivateRoute><AppLayout /></PrivateRoute>}>
+      <Route
+        path="/register"
+        element={
+          <RestrictedRoute>
+            <RegisterPage />
+          </RestrictedRoute>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <RestrictedRoute>
+            <LoginPage />
+          </RestrictedRoute>
+        }
+      />
+      <Route
+        element={
+          <PrivateRoute>
+            <AppLayout />
+          </PrivateRoute>
+        }
+      >
         <Route path="/recommended" element={<HomePage />} />
         <Route path="/library" element={<LibraryPage />} />
         <Route path="/reading/:bookId" element={<ReadingPage />} />

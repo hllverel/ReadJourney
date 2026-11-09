@@ -13,7 +13,7 @@ const RegisterForm = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const passwordId = useId();
-  
+
   const {
     register,
     handleSubmit,
@@ -32,13 +32,23 @@ const RegisterForm = () => {
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
       <label className={styles.field}>
         <span className={styles.label}>Name:</span>
-        <input className={styles.input} type="text" autoComplete="name" {...register("name")} />
+        <input
+          className={styles.input}
+          type="text"
+          autoComplete="name"
+          {...register("name")}
+        />
       </label>
       {errors.name && <p className={styles.error}>{errors.name.message}</p>}
 
       <label className={styles.field}>
         <span className={styles.label}>Mail:</span>
-        <input className={styles.input} type="email" autoComplete="email" {...register("email")} />
+        <input
+          className={styles.input}
+          type="email"
+          autoComplete="email"
+          {...register("email")}
+        />
       </label>
       {errors.email && <p className={styles.error}>{errors.email.message}</p>}
 
@@ -60,14 +70,22 @@ const RegisterForm = () => {
           aria-label={showPassword ? "Hide password" : "Show password"}
         >
           <svg className={styles.toggleIcon} aria-hidden="true">
-            <use href={`/symbol-defs.svg#${showPassword ? "hidepassword" : "showpassword"}`} />
+            <use
+              href={`/symbol-defs.svg#${showPassword ? "hidepassword" : "showpassword"}`}
+            />
           </svg>
         </button>
       </div>
-      {errors.password && <p className={styles.error}>{errors.password.message}</p>}
+      {errors.password && (
+        <p className={styles.error}>{errors.password.message}</p>
+      )}
 
       <div className={styles.actions}>
-        <button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+        <button
+          className={styles.submitButton}
+          type="submit"
+          disabled={isSubmitting}
+        >
           Registration
         </button>
         <Link className={styles.loginLink} to="/login">

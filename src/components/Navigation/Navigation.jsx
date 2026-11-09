@@ -8,7 +8,11 @@ const Navigation = ({ onNavigate }) => (
   <nav aria-label="Main">
     <ul className={styles.list}>
       <li>
-        <NavLink className={getLinkClass} to="/recommended" onClick={onNavigate}>
+        <NavLink
+          className={getLinkClass}
+          to="/recommended"
+          onClick={onNavigate}
+        >
           Home
         </NavLink>
       </li>

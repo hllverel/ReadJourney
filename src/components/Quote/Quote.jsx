@@ -9,8 +9,8 @@ const Quote = () => (
       alt="stacked books icon"
     />
     <p className={styles.text}>
-      "Books are <span>windows</span> to the world, and reading is a journey into the
-      unknown."
+      &ldquo;Books are <span>windows</span> to the world, and reading is a
+      journey into the unknown.&rdquo;
     </p>
   </div>
 );

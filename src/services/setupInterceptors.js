@@ -9,7 +9,7 @@ let refreshPromise = null;
 const requestNewTokens = async (refreshToken) => {
   const { data } = await axios.get(
     `${api.defaults.baseURL}/users/current/refresh`,
-    { headers: { Authorization: `Bearer ${refreshToken}` } }
+    { headers: { Authorization: `Bearer ${refreshToken}` } },
   );
   return data;
 };
@@ -33,7 +33,7 @@ export const setupInterceptors = (store) => {
 
       try {
         refreshPromise ??= requestNewTokens(
-          store.getState().auth.refreshToken
+          store.getState().auth.refreshToken,
         ).finally(() => {
           refreshPromise = null;
         });
@@ -50,6 +50,6 @@ export const setupInterceptors = (store) => {
         store.dispatch(clearSession());
         return Promise.reject(error);
       }
-    }
+    },
   );
 };

@@ -35,7 +35,12 @@ const Modal = ({ onClose, label, children }) => {
 
   return createPortal(
     <div className={styles.backdrop} onClick={handleBackdropClick}>
-      <div className={styles.modal} role="dialog" aria-modal="true" aria-label={label}>
+      <div
+        className={styles.modal}
+        role="dialog"
+        aria-modal="true"
+        aria-label={label}
+      >
         <button
           ref={closeButtonRef}
           type="button"
@@ -50,7 +55,7 @@ const Modal = ({ onClose, label, children }) => {
         {children}
       </div>
     </div>,
-    document.body
+    document.body,
   );
 };
 

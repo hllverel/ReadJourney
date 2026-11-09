@@ -1,13 +1,13 @@
 .placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--input);
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--input);
+  overflow: hidden;
 }
 
 .placeholderIcon {
-    width: 70%;
-    fill: rgba(249, 249, 249, 0.3);
-    aspect-ratio: 49 / 32;
+  width: 70%;
+  fill: rgba(249, 249, 249, 0.3);
+  aspect-ratio: 49 / 32;
 }

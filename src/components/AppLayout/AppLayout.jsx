@@ -14,7 +14,7 @@ const AppLayout = () => {
       .unwrap()
       .catch((message) => toast.error(message));
   }, [dispatch]);
-  
+
   return (
     <div className={styles.layout}>
       <Header />
@@ -22,7 +22,7 @@ const AppLayout = () => {
         <Outlet />
       </main>
     </div>
-  )
+  );
 };
 
 export default AppLayout;

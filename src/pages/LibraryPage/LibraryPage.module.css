@@ -1,17 +1,17 @@
 .page {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (min-width: 768px) {
-    .page {
-        gap: 16px;
-    }
+  .page {
+    gap: 16px;
+  }
 }
 
 @media (min-width: 1280px) {
-    .page {
-        flex-direction: row;
-    }
+  .page {
+    flex-direction: row;
+  }
 }

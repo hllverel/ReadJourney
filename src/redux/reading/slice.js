@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { logOut } from "../auth/operations";
-import { getBook, startReading, stopReading, deleteReading } from "./operations";
+import {
+  getBook,
+  startReading,
+  stopReading,
+  deleteReading,
+} from "./operations";
 import { clearSession } from "../auth/slice";
 
 const initialState = {

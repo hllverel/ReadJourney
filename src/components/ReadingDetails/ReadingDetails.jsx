@@ -13,8 +13,8 @@ const ReadingDetails = ({ book }) => {
       <section className={styles.details}>
         <h2 className={styles.title}>Progress</h2>
         <p className={styles.hint}>
-          Here you will see when and how much you read. To record, click on
-          the red button above.
+          Here you will see when and how much you read. To record, click on the
+          red button above.
         </p>
         <span className={styles.star} role="img" aria-label="Star">
           🌟

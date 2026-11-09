@@ -10,10 +10,10 @@ export const register = createAsyncThunk(
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
-        error.response?.data?.message || error.message
+        error.response?.data?.message || error.message,
       );
     }
-  }
+  },
 );
 
 export const logIn = createAsyncThunk(
@@ -25,10 +25,10 @@ export const logIn = createAsyncThunk(
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
-        error.response?.data?.message || error.message
+        error.response?.data?.message || error.message,
       );
     }
-  }
+  },
 );
 
 export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
@@ -36,7 +36,7 @@ export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
     await api.post("/users/signout");
   } catch (error) {
     return thunkAPI.rejectWithValue(
-      error.response?.data?.message || error.message
+      error.response?.data?.message || error.message,
     );
   } finally {
     clearAuthHeader();
@@ -51,8 +51,8 @@ export const refreshUser = createAsyncThunk(
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
-        error.response?.data?.message || error.message
+        error.response?.data?.message || error.message,
       );
     }
-  }
+  },
 );

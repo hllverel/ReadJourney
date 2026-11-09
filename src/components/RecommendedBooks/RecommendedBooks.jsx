@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useRef, useState } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { getRecommendedBooks } from "../../redux/books/operations.js";
@@ -14,7 +14,7 @@ import AddToLibraryModals from "../AddToLibraryModals/AddToLibraryModals.jsx";
 import BookCard from "../BookCard/BookCard.jsx";
 import styles from "./RecommendedBooks.module.css";
 
-const RecommendedBooks = ({filters}) => {
+const RecommendedBooks = ({ filters }) => {
   const listRef = useRef(null);
   const limit = useBooksPerPage(listRef);
   const dispatch = useDispatch();
@@ -23,7 +23,6 @@ const RecommendedBooks = ({filters}) => {
   const totalPages = useSelector(selectBooksTotalPages);
   const isLoading = useSelector(selectBooksIsLoading);
   const detailsModal = useModal();
-  const successModal = useModal();
 
   const loadPage = useCallback(
     (nextPage) => {
@@ -31,13 +30,12 @@ const RecommendedBooks = ({filters}) => {
         .unwrap()
         .catch((message) => toast.error(message));
     },
-    [dispatch, limit, filters]
+    [dispatch, limit, filters],
   );
 
-   useEffect(() => {
-     if (limit) loadPage(1);
-   }, [limit, loadPage]);
-  
+  useEffect(() => {
+    if (limit) loadPage(1);
+  }, [limit, loadPage]);
 
   return (
     <section className={styles.section}>
@@ -71,7 +69,7 @@ const RecommendedBooks = ({filters}) => {
 
       <ul className={styles.list} ref={listRef}>
         {books.map((book) => (
-          <BookCard key={book._id} book={book} onOpen={detailsModal.open}/>
+          <BookCard key={book._id} book={book} onOpen={detailsModal.open} />
         ))}
       </ul>
 

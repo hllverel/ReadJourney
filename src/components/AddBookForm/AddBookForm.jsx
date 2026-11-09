@@ -41,7 +41,11 @@ const AddBookForm = () => {
 
   return (
     <>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
         <fieldset className={styles.fieldset}>
           <legend className={styles.legend}>Filters:</legend>
 
@@ -55,7 +59,9 @@ const AddBookForm = () => {
               {...register("title")}
             />
           </label>
-          {errors.title && <p className={styles.error}>{errors.title.message}</p>}
+          {errors.title && (
+            <p className={styles.error}>{errors.title.message}</p>
+          )}
 
           <label className={styles.field}>
             <span className={styles.label}>The author:</span>
@@ -67,7 +73,9 @@ const AddBookForm = () => {
               {...register("author")}
             />
           </label>
-          {errors.author && <p className={styles.error}>{errors.author.message}</p>}
+          {errors.author && (
+            <p className={styles.error}>{errors.author.message}</p>
+          )}
 
           <label className={styles.field}>
             <span className={styles.label}>Number of pages:</span>
@@ -84,7 +92,11 @@ const AddBookForm = () => {
           )}
         </fieldset>
 
-        <button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+        <button
+          className={styles.submitButton}
+          type="submit"
+          disabled={isSubmitting}
+        >
           Add book
         </button>
       </form>

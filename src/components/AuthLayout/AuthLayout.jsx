@@ -10,7 +10,8 @@ const AuthLayout = ({ children }) => (
         <span className={styles.logoText}>Read Journey</span>
       </div>
       <h1 className={styles.title}>
-        Expand your mind, reading <span className={styles.titleAccent}>a book</span>
+        Expand your mind, reading{" "}
+        <span className={styles.titleAccent}>a book</span>
       </h1>
       {children}
     </section>

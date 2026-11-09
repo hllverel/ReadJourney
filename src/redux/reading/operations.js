@@ -17,7 +17,7 @@ export const getBook = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(getErrorMessage(error));
     }
-  }
+  },
 );
 
 export const startReading = createAsyncThunk(
@@ -28,7 +28,7 @@ export const startReading = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(getErrorMessage(error));
     }
-  }
+  },
 );
 
 export const stopReading = createAsyncThunk(
@@ -39,7 +39,7 @@ export const stopReading = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(getErrorMessage(error));
     }
-  }
+  },
 );
 
 export const deleteReading = createAsyncThunk(
@@ -50,5 +50,5 @@ export const deleteReading = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(getErrorMessage(error));
     }
-  }
+  },
 );

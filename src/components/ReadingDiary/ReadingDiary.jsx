@@ -14,7 +14,7 @@ const ReadingDiary = ({ book }) => {
   const dispatch = useDispatch();
 
   const sessions = [...getFinishedSessions(book)].sort(
-    (a, b) => new Date(b.finishReading) - new Date(a.finishReading)
+    (a, b) => new Date(b.finishReading) - new Date(a.finishReading),
   );
 
   const handleDelete = (entry) => {

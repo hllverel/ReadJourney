@@ -11,7 +11,7 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 const ReadingStatistics = ({ book }) => {
   const totalRead = getFinishedSessions(book).reduce(
     (sum, entry) => sum + getPagesRead(entry),
-    0
+    0,
   );
   const pagesRead = Math.min(totalRead, book.totalPages);
   const percent = getPercent(pagesRead, book.totalPages);
@@ -19,9 +19,9 @@ const ReadingStatistics = ({ book }) => {
   return (
     <div className={styles.statistics}>
       <p className={styles.description}>
-        Each page, each chapter is a new round of knowledge, a new step
-        towards understanding. By rewriting statistics, we create our own
-        reading history.
+        Each page, each chapter is a new round of knowledge, a new step towards
+        understanding. By rewriting statistics, we create our own reading
+        history.
       </p>
 
       <div className={styles.card}>

@@ -68,8 +68,8 @@ const MyLibraryBooks = () => {
           </span>
           <p className={styles.emptyText}>
             To start training, add{" "}
-            <span className={styles.muted}>some of your books</span> or from
-            the recommended ones
+            <span className={styles.muted}>some of your books</span> or from the
+            recommended ones
           </p>
         </div>
       )}

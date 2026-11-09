@@ -8,8 +8,8 @@ export const getRecommendedBooks = createAsyncThunk(
       return await fetchRecommendedBooks(params);
     } catch (error) {
       return thunkAPI.rejectWithValue(
-        error.response?.data?.message || error.message
+        error.response?.data?.message || error.message,
       );
     }
-  }
+  },
 );

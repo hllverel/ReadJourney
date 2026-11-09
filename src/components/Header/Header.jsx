@@ -33,29 +33,33 @@ const Header = () => {
       <div className={styles.navBar}>
         <Navigation onNavigate={() => setIsMenuOpen(false)} />
       </div>
-      
+
       <div className={styles.userBar}>
         <div className={styles.userInfo}>
           <div className={styles.avatar} aria-hidden="true">
             {name?.charAt(0).toUpperCase()}
           </div>
-            <p className={styles.userName}>{name}</p>
+          <p className={styles.userName}>{name}</p>
         </div>
-        
+
         <button
-            type="button"
-            className={styles.menuToggle}
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMenuOpen}
-            aria-controls={menuId}
-          >
-            <svg className={styles.menuIcon} aria-hidden="true">
-              <use href={`/symbol-defs.svg#${isMenuOpen ? "close" : "menu"}`} />
-            </svg>
+          type="button"
+          className={styles.menuToggle}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls={menuId}
+        >
+          <svg className={styles.menuIcon} aria-hidden="true">
+            <use href={`/symbol-defs.svg#${isMenuOpen ? "close" : "menu"}`} />
+          </svg>
         </button>
 
-        <button type="button" className={styles.logoutButton} onClick={handleLogout}>
+        <button
+          type="button"
+          className={styles.logoutButton}
+          onClick={handleLogout}
+        >
           Log out
         </button>
       </div>
@@ -68,7 +72,11 @@ const Header = () => {
       >
         <div></div>
         <Navigation onNavigate={() => setIsMenuOpen(false)} />
-        <button type="button" className={`${styles.logoutButton} ${styles.mobile}`} onClick={handleLogout}>
+        <button
+          type="button"
+          className={`${styles.logoutButton} ${styles.mobile}`}
+          onClick={handleLogout}
+        >
           Log out
         </button>
       </div>

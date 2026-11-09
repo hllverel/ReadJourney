@@ -10,7 +10,9 @@ const MyReading = ({ book }) => {
       <div className={styles.header}>
         <h2 className={styles.title}>My reading</h2>
         {book.timeLeftToRead && (
-          <p className={styles.timeLeft}>{formatTimeLeft(book.timeLeftToRead)}</p>
+          <p className={styles.timeLeft}>
+            {formatTimeLeft(book.timeLeftToRead)}
+          </p>
         )}
       </div>
 

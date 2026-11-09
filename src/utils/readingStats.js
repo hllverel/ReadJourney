@@ -9,7 +9,9 @@ export const getPercent = (pages, totalPages) =>
 export const getMinutesRead = (entry) =>
   Math.max(
     1,
-    Math.round((new Date(entry.finishReading) - new Date(entry.startReading)) / 60000)
+    Math.round(
+      (new Date(entry.finishReading) - new Date(entry.startReading)) / 60000,
+    ),
   );
 
 export const formatDate = (isoDate) =>
