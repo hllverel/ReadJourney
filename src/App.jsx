@@ -1,4 +1,6 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import AppLayout from "./components/AppLayout/AppLayout.jsx";
@@ -7,9 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import LibraryPage from "./pages/LibraryPage/LibraryPage.jsx";
 import ReadingPage from "./pages/ReadingPage/ReadingPage.jsx";
-
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
 import { refreshUser } from "./redux/auth/operations.js";
 import { selectToken } from "./redux/auth/selectors.js";
 
@@ -37,7 +37,7 @@ function App() {
         <Route path="/library" element={<LibraryPage />} />
         <Route path="/reading/:bookId" element={<ReadingPage />} />
       </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

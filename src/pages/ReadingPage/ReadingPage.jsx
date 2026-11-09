@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { getBook } from "../../redux/reading/operations.js";
@@ -14,6 +14,17 @@ const ReadingPage = () => {
   const { bookId } = useParams();
   const dispatch = useDispatch();
   const book = useSelector(selectReadingBook);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setHasError(false);
+    dispatch(getBook(bookId))
+      .unwrap()
+      .catch((message) => {
+        toast.error(message);
+        setHasError(true);
+      });
+  }, [dispatch, bookId]);
 
   useEffect(() => {
     dispatch(getBook(bookId))
@@ -33,6 +44,14 @@ const ReadingPage = () => {
           </Dashboard>
           <MyReading book={book} />
         </>
+      )}
+      {hasError && (
+        <div className={styles.error}>
+          <p className={styles.errorText}>We could not load this book.</p>
+          <Link className={styles.errorLink} to="/library">
+            Back to My library
+          </Link>
+        </div>
       )}
     </div>
   );
