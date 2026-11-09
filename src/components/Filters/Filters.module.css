@@ -14,6 +14,9 @@
 
 .field {
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   border-radius: 12px;
   padding: 14px;
   background: var(--input);
@@ -21,16 +24,25 @@
   line-height: 133%;
 }
 
+.field:focus-within,
+.field:hover {
+  outline: 1px solid rgba(249, 249, 249, 0.1);
+}
+
 .label {
   color: var(--lightgrey);
-  margin-right: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .input,
 .input::placeholder {
   background: none;
   border: none;
+  outline: none;
   color: var(--white);
+  flex: 1;
+  min-width: 0;
 }
 
 .submitButton {
