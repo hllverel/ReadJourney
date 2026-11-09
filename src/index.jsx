@@ -6,8 +6,11 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store.js";
 import { setAuthHeader } from './services/api.js';
+import { setupInterceptors } from "./services/setupInterceptors";
 import './index.css';
 import App from './App';
+
+setupInterceptors(store);
 
 const handleBeforeLift = () => {
   const token = store.getState().auth.token;

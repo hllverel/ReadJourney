@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { logOut } from "../auth/operations";
 import { getBook, startReading, stopReading, deleteReading } from "./operations";
+import { clearSession } from "../auth/slice";
 
 const initialState = {
   book: null,
@@ -26,7 +27,8 @@ const readingSlice = createSlice({
       .addCase(stopReading.fulfilled, handleBookUpdated)
       .addCase(deleteReading.fulfilled, handleBookUpdated)
       .addCase(logOut.fulfilled, () => initialState)
-      .addCase(logOut.rejected, () => initialState);
+      .addCase(logOut.rejected, () => initialState)
+      .addCase(clearSession, () => initialState);
   },
 });
 

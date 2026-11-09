@@ -7,6 +7,7 @@ import {
   removeBook,
 } from "./operations";
 import { startReading, stopReading, deleteReading } from "../reading/operations";
+import { clearSession } from "../auth/slice";
 
 const initialState = {
   items: [],
@@ -43,7 +44,8 @@ const librarySlice = createSlice({
       .addCase(logOut.rejected, () => initialState)
       .addCase(startReading.fulfilled, handleBookUpdated)
       .addCase(stopReading.fulfilled, handleBookUpdated)
-      .addCase(deleteReading.fulfilled, handleBookUpdated);
+      .addCase(deleteReading.fulfilled, handleBookUpdated)
+      .addCase(clearSession, () => initialState);
   },
 });
 

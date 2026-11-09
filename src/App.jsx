@@ -8,7 +8,25 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import LibraryPage from "./pages/LibraryPage/LibraryPage.jsx";
 import ReadingPage from "./pages/ReadingPage/ReadingPage.jsx";
 
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { refreshUser } from "./redux/auth/operations.js";
+import { selectToken } from "./redux/auth/selectors.js";
+
 function App() {
+  const dispatch = useDispatch();
+  const token = useSelector(selectToken);
+  const [isChecking, setIsChecking] = useState(Boolean(token));
+
+  useEffect(() => {
+    if (!isChecking) return;
+    dispatch(refreshUser()).finally(() => setIsChecking(false));
+  }, [dispatch, isChecking]);
+
+  if (isChecking) {
+    return null;
+    }
+  
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/recommended" replace />} />
