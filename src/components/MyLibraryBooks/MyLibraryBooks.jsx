@@ -12,6 +12,7 @@ import { useModal } from "../../hooks/useModal.js";
 import BookCard from "../BookCard/BookCard.jsx";
 import BookDetails from "../BookDetails/BookDetails.jsx";
 import Modal from "../Modal/Modal.jsx";
+import Dropdown from "../Dropdown/Dropdown.jsx";
 import styles from "./MyLibraryBooks.module.css";
 
 const MyLibraryBooks = () => {
@@ -42,30 +43,23 @@ const MyLibraryBooks = () => {
       <div className={styles.header}>
         <h2 className={styles.title}>My library</h2>
 
-        <div className={styles.selectWrapper}>
-          <select
-            className={styles.select}
-            value={status}
-            onChange={(event) => setStatus(event.target.value)}
-            aria-label="Filter books by status"
-          >
-            {libraryFilterOptions.map(({ value, label }) => (
-              <option key={value} value={value}>
-                {label}
-              </option>
-            ))}
-          </select>
-          <svg className={styles.selectIcon} aria-hidden="true">
-            <use href="/symbol-defs.svg#dropdown" />
-          </svg>
-        </div>
+        <Dropdown
+          label="Filter books by status"
+          options={libraryFilterOptions}
+          value={status}
+          onChange={setStatus}
+        />
       </div>
 
       {isLoaded && books.length === 0 && (
         <div className={styles.empty}>
-          <span className={styles.emptyIcon} role="img" aria-label="Books">
-            📚
-          </span>
+          <div className={styles.emptyBg}>
+          <img
+            className={styles.emptyIcon}
+            src="/assets/books@1x.webp"
+            srcSet="/assets/books@1x.webp 1x, /assets/books@2x.webp 2x"
+            alt="stacked books icon"
+          /></div>
           <p className={styles.emptyText}>
             To start training, add{" "}
             <span className={styles.muted}>some of your books</span> or from the

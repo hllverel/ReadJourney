@@ -64,6 +64,7 @@ p {
 a,
 button {
   all: unset;
+  box-sizing: border-box;
   text-decoration: none;
   cursor: pointer;
 }
