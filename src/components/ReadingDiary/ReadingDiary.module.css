@@ -1,0 +1,185 @@
+.list {
+  border-radius: 12px;
+  background: var(--input);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background: var(--componentbg);
+  overflow: hidden;
+  position: absolute;
+  left: 23px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topLeft {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: var(--lightgrey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.markerLatest {
+  background: var(--white);
+}
+
+.markerCenter {
+  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+  background: var(--componentbg);
+}
+
+.date {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: var(--lightgrey);
+}
+
+.dateLatest {
+  color: var(--white);
+}
+
+.pages {
+  margin-right: 20px;
+  color: var(--lightgrey);
+  font-size: 12px;
+  line-height: 1.33333;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25px;
+}
+
+.percent {
+  margin-bottom: 4px;
+}
+
+.minutes {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--lightgrey);
+}
+
+.speedRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.sparkline {
+  width: 43px;
+  height: 17px;
+}
+
+.sparkline polygon {
+  fill: rgba(48, 185, 77);
+}
+
+.sparkline line {
+  stroke: var(--green);
+}
+
+.deleteIcon {
+  width: 14px;
+  height: 14px;
+  filter: grayscale(1);
+}
+
+.speedText {
+  max-width: 43px;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--lightgrey);
+}
+
+@media (min-width: 768px) {
+  .line {
+    left: 25px;
+  }
+
+  .topLeft {
+    gap: 10px;
+  }
+
+  .marker {
+    width: 20px;
+    height: 20px;
+  }
+
+  .markerCenter {
+    width: 12px;
+    height: 12px;
+  }
+
+  .date {
+    font-size: 16px;
+    line-height: 1.125;
+  }
+
+  .pages {
+    font-size: 14px;
+    line-height: 1.28571;
+    margin-right: 22px;
+  }
+
+  .details {
+    margin-left: 30px;
+  }
+
+  .percent {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .minutes {
+    font-size: 12px;
+    line-height: 1.16667;
+  }
+
+  .sparkline {
+    width: 59px;
+    height: 25px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .list {
+    padding: 20px;
+  }
+
+  .line {
+    left: 29px;
+  }
+}

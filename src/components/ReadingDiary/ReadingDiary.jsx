@@ -25,20 +25,25 @@ const ReadingDiary = ({ book }) => {
 
   return (
     <ul className={styles.list}>
+      <div className={styles.line}></div>
       {sessions.map((entry, index) => (
         <li key={entry._id} className={styles.item}>
           <div className={styles.top}>
-            <span
-              className={
-                index === 0
-                  ? `${styles.marker} ${styles.markerLatest}`
-                  : styles.marker
-              }
-              aria-hidden="true"
-            />
-            <time className={styles.date} dateTime={entry.finishReading}>
-              {formatDate(entry.finishReading)}
-            </time>
+            <div className={styles.topLeft}>
+              <div
+                className={
+                  index === 0
+                    ? `${styles.marker} ${styles.markerLatest}`
+                    : styles.marker
+                }
+                aria-hidden="true">
+                  <div className={styles.markerCenter} ></div>
+                </div>
+              <time className={index === 0 ? `${styles.date} ${styles.dateLatest}` : styles.date}
+                dateTime={entry.finishReading}>
+                {formatDate(entry.finishReading)}
+                </time>
+            </div>
             <p className={styles.pages}>{getPagesRead(entry)} pages</p>
           </div>
 
