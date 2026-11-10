@@ -16,9 +16,10 @@ const ReadingDetails = ({ book }) => {
           Here you will see when and how much you read. To record, click on the
           red button above.
         </p>
+        <div className={styles.starBg}>
         <span className={styles.star} role="img" aria-label="Star">
           🌟
-        </span>
+        </span></div>
       </section>
     );
   }

@@ -1,3 +1,7 @@
+.form {
+  margin-bottom: 20px;
+}
+
 .fieldset {
   border: none;
   display: flex;
@@ -49,7 +53,7 @@
   margin-top: 12px;
   border: 1px solid rgba(249, 249, 249, 0.2);
   border-radius: 30px;
-  width: 98px;
+  width: 91px;
   height: 38px;
   text-align: center;
   font-weight: 700;
@@ -72,7 +76,7 @@
   }
 
   .submitButton {
-    width: 122px;
+    width: 114px;
     height: 42px;
     font-size: 16px;
     line-height: 113%;
