@@ -1,8 +1,8 @@
 import BookCover from "../BookCover/BookCover.jsx";
 import styles from "./BookCard.module.css";
 
-const BookCard = ({ book, onOpen, onDelete }) => (
-  <li className={styles.card}>
+const BookCard = ({ book, onOpen, onDelete, size = "default" }) => (
+  <li className={size === "small" ? `${styles.card} ${styles.cardSmall}` : styles.card}>
     <button
       type="button"
       className={styles.coverButton}

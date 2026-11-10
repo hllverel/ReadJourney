@@ -2,6 +2,10 @@
   width: 137px;
 }
 
+.cardSmall {
+  width: 71px;
+}
+
 .coverButton {
   margin-bottom: 8px;
   transition: 0.15s ease-in-out;
@@ -19,11 +23,20 @@
   height: 208px;
 }
 
+.cardSmall .cover {
+  width: 71px;
+  height: 107px;
+}
+
 .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 2px;
+}
+
+.cardSmall .title {
+  font-size: 10px;
 }
 
 .author {
