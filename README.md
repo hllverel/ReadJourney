@@ -6,7 +6,7 @@ The project was built for the GoIT full-stack JavaScript course. It is a single-
 
 ## Links
 
-- **Live demo:** - COMING SOON -
+- **Live demo:** https://read-journey-teal.vercel.app/
 - **Repository:** https://github.com/hllverel/ReadJourney
 - **Design (Figma):** https://www.figma.com/file/z3m0rdBcEfLTJUBDkAKhWQ/BOOKS-READING?type=design&node-id=18743%3A4973&mode=design&t=Hi1KTaUJMogWXZzz-1
 - **API documentation (Swagger):** https://readjourney.b.goit.study/api-docs/
@@ -141,4 +141,4 @@ The layout is mobile first and follows the Figma design: flexible from 320px, fu
 
 ## Author
 
-Hilal ([@hllverel](https://github.com/hllverel))
+Hilal Verel ([@hllverel](https://github.com/hllverel))
