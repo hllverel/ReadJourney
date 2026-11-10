@@ -8,7 +8,7 @@ const NotFoundPage = () => (
       The page you are looking for does not exist or has been moved.
     </p>
     <Link className={styles.link} to="/">
-      Go to the home page
+      🔗 Go to the home page
     </Link>
   </main>
 );
