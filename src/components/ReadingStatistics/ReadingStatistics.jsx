@@ -53,7 +53,7 @@ const ReadingStatistics = ({ book }) => {
               transform="rotate(-90 50 50)"
             />
           </svg>
-          <p className={styles.total}>100%</p>
+          <h2 className={styles.total}>100%</h2>
         </div>
 
         <div className={styles.legend}>

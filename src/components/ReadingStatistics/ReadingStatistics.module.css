@@ -1,0 +1,103 @@
+.description {
+  color: var(--lightgrey);
+  display: none;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--input);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+}
+
+.chart {
+  width: 116px;
+  height: 116px;
+  position: relative;
+}
+
+.track {
+  border-radius: 100%;
+  stroke: #1f1f1f;
+  grid-row: 1;
+}
+
+.arc {
+  border-radius: 100%;
+  stroke: var(--green);
+  grid-row: 1;
+}
+
+.total {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+}
+
+.legend {
+  display: flex;
+  gap: 15px;
+}
+
+.legendMarker {
+  border-radius: 4px;
+  width: 14px;
+  height: 14px;
+  background: var(--green);
+}
+
+.pagesRead {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--lightgrey);
+  margin-top: 4px;
+}
+
+@media (min-width: 728px) {
+  .card {
+    padding: 28px;
+    gap: 16px;
+  }
+
+  .chart {
+    width: 138px;
+    height: 138px;
+  }
+
+  .total {
+    font-size: 20px;
+  }
+
+  .percent {
+    font-size: 20px;
+  }
+
+  .pagesRead {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .description {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    padding: 31px;
+    gap: 20px;
+  }
+
+  .chart {
+    width: 168px;
+    height: 168px;
+  }
+
+  .total {
+    left: 40%;
+  }
+}
