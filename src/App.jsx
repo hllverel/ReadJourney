@@ -55,7 +55,7 @@ function App() {
       >
         <Route path="/recommended" element={<HomePage />} />
         <Route path="/library" element={<LibraryPage />} />
-        <Route path="/reading/:bookId" element={<ReadingPage />} />
+        <Route path="/reading" element={<ReadingPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

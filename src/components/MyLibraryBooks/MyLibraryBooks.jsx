@@ -35,7 +35,7 @@ const MyLibraryBooks = () => {
   const handleStartReading = () => {
     const { _id } = detailsModal.payload;
     detailsModal.close();
-    navigate(`/reading/${_id}`);
+    navigate(`/reading?book=${_id}`);
   };
 
   return (
